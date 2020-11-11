@@ -351,7 +351,7 @@ al alza con el aumento de la edad.</p>
 </div>
 <div id="modelos-considerados" class="section level1">
 <h1>Modelos considerados</h1>
-<p>Como se puede apreciar, se presentan seis modelos GAMLSS con el fin de explicar la masa de las personas de la India y algunas medidas de desempeño como el valor del criterio de información de Akaike (AIC), el coeficiente de correlación entre los datos y las predicciones realizadas por los modelos (Cor) y el pseduo-R² (psR²), esto con el fin de poder comparar los modelos de una manera adecuada y posteriormente seleccionar al mejor de estos. En los cuatro primeros modelos ajustados se asocian distribuciones Gamma e Inversa Gausiana a la variable respuesa, difiriendo en que en el primer modelo se utilizan edad y género en el parámetro de escala, mientras que en los tres siguientes solo se usa el género. Asimismo, en los dos últimos modelos se emplea una distribución Box-Cox Col and Green para la variable respuesa, incluyendo interacciones entre las variables cuantitativas y los factores en el primer caso para la media y en el segundo caso empleando una técnica de selección de variables propia del paquete GAMLSS.  
+<p>Como se puede apreciar, se presentan seis modelos GAMLSS con el fin de explicar la masa de las personas de la India y algunas medidas de desempeño como el valor del criterio de información de Akaike (AIC), el coeficiente de correlación entre los datos y las predicciones realizadas por los modelos (Cor) y el pseduo-R² (psR²), esto con el fin de poder comparar los modelos de una manera adecuada y posteriormente seleccionar al mejor de estos. En los cuatro primeros modelos ajustados se asocian distribuciones Gamma e Inversa Gausiana a la variable respuesta, difiriendo en que en el primer modelo se utilizan edad y género en el parámetro de escala, mientras que en los tres siguientes solo se usa el género. Asimismo, en los dos últimos modelos se emplea una distribución Box-Cox Col and Green para la variable respuesta, incluyendo interacciones entre las variables cuantitativas y los factores en el primer caso para la media y en el segundo caso empleando una técnica de selección de variables propia del paquete GAMLSS.  
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
@@ -515,6 +515,9 @@ BCCGo
 </tr>
 </tbody>
 </table>
+Cabe resaltar que por la gran dismunución en el criterio de Información de Akaike y el aumento en el pseduo-R², además, teniendo en cuenta el principio de parsimonia, se
+escoge al modelo 6 como mejor modelo entre los ajustados y el propuesto por los autores.
+Se presentan las ecuaciones del modelo a continuación:
 <p><span class="math display" font-size=90%>\[\begin{equation}
 {\scriptstyle
 \begin{cases}
@@ -522,12 +525,10 @@ log(\hat{\mu}) = -3.640 + 0.006312Age + 4.824Height -0.4618Male\\
 log(\hat{\sigma}) = 91.199 -63.231Height + 8.672Male\\
 \end{cases}}
 \end{equation}\]</span></p>
-Cabe resaltar que por la gran dismunución en el criterio de Información de Akaike y el aumento en el pseduo-R², además, teniendo en cuenta el principio de parsimonia, se
-escoge al modelo 6 como mejor modelo entre los ajustados y el propuesto por los autores. 
 </div>
 <div id="análisis-de-residuales" class="section level1">
 <h1>Análisis de residuales</h1>
-<p>Del análisis de residuales se tiene un gráfico en la sección superior izquierda que permite apreciar el efecto de ruido blanco, pues los puntos allí graficados se distribuyen de manera aleatoria sin ningún patrón, lo que permite notar además que existe homocedasticidad en estos. Dicho esto, cabe resaltar que el gráfico de justo a su derecha sugiere que no hay correlación entre los residuales pues se logra percibir la aleatoriedad en la distribución de los puntos. Respecto a los dos gráficos inferiores es pertinente traer a colación el hecho de que el ajuste del modelo es apropiado pues todos los puntos del gráfico inferior izquierdo residen dentro de la región de confianza y se encuentran cercanos al cero sin curvaturas pronunciadas, asimismo, se puede afirmar la normalidad en los residuales, pues no se presentan comportamientos extraños y se encuentran realmente próximos a la linea del gráfico cuantil-cuantil de la zona inferior derecha.</p>
+<p>Del análisis de residuales se tiene un gráfico en la sección superior izquierda que permite apreciar el efecto de ruido blanco, pues los puntos allí graficados se distribuyen de manera aleatoria sin ningún patrón, lo que permite notar además que existe homocedasticidad en estos. Dicho esto, cabe resaltar que el gráfico justo a su derecha sugiere que no hay correlación entre los residuales pues se logra percibir la aleatoriedad en la distribución de los puntos. Respecto a los dos gráficos inferiores es pertinente traer a colación el hecho de que el ajuste del modelo es apropiado pues todos los puntos del gráfico inferior izquierdo residen dentro de la región de confianza y se encuentran cercanos al cero sin curvaturas pronunciadas, asimismo, se puede afirmar la normalidad en los residuales, pues no se presentan comportamientos extraños y se encuentran realmente próximos a la linea del gráfico cuantil-cuantil de la zona inferior derecha.</p>
 <div class="figure">
 <img src="Residuales.png" alt="" style="margin-left:80px"/>
 <p class="caption"></p>
@@ -545,7 +546,7 @@ escoge al modelo 6 como mejor modelo entre los ajustados y el propuesto por los 
 <h1>Conclusiones</h1>
 <p>En primer lugar, se puede notar un patrón claro en todos los casos, el cual consta de un aumento en la masa con aumentos en la edad y la estatura, además de una disminución de la variabilidad a medida que crece la estatura.<br />
 Dicho esto, se puede asegurar que la distribución normal no es una selección muy adecuada para la variable respuesta pues los datos presentan sesgo y asimetría.<br />
-Por último, la flexibilidad de los modelos GAMLSS permitieron encontrar una distribución que se ajusta realmente bien a la naturaleza de los datos, logrando mejoras en la explicación de la variable respuesta como lo son una gran disminución en el criterio de Información de Akaike y un aumento en el pseduo-R².<br />
+Asimismo, la flexibilidad de los modelos GAMLSS permitieron encontrar una distribución que se ajusta realmente bien a la naturaleza de los datos, logrando mejoras en la explicación de la variable respuesta como lo son una gran disminución en el criterio de Información de Akaike y un aumento en el pseduo-R².<br />
 Por último, se tiene que la edad, la estatura y el género son realmente significativas a la hora de estimar la masa promedio del ser humano pues en todos los análisis realizados figuraban como covariables que realmente aportan de manera beneficiosa para la realización de esta tarea.</p>
 </div>
 <div id="referencias" class="section level1">
